@@ -453,7 +453,24 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:19.2.1, @commitlint/cli@npm:^19.2.1":
+"@commitlint/cli@npm:19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/cli@npm:19.2.2"
+  dependencies:
+    "@commitlint/format": "npm:^19.0.3"
+    "@commitlint/lint": "npm:^19.2.2"
+    "@commitlint/load": "npm:^19.2.0"
+    "@commitlint/read": "npm:^19.2.1"
+    "@commitlint/types": "npm:^19.0.3"
+    execa: "npm:^8.0.1"
+    yargs: "npm:^17.0.0"
+  bin:
+    commitlint: cli.js
+  checksum: 10/bff139177aecffe809ec8665a7ffd3f9acae144ec8634b6ed93802ae9a3333bc978f69ba26dacd2bbc0e06e3dada8ca49fe49bd5316c916e626f8df8dcc03dc9
+  languageName: node
+  linkType: hard
+
+"@commitlint/cli@npm:^19.2.1":
   version: 19.2.1
   resolution: "@commitlint/cli@npm:19.2.1"
   dependencies:
@@ -521,6 +538,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/is-ignored@npm:^19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/is-ignored@npm:19.2.2"
+  dependencies:
+    "@commitlint/types": "npm:^19.0.3"
+    semver: "npm:^7.6.0"
+  checksum: 10/f412734496aba808c8bcbddd59c615600d62447ad2b62049805a044b1f299ff6628e2c9ce5022e55848099edc2591f62a7780842d9dffcd60ab3889bc93fea62
+  languageName: node
+  linkType: hard
+
 "@commitlint/lint@npm:^19.1.0":
   version: 19.1.0
   resolution: "@commitlint/lint@npm:19.1.0"
@@ -530,6 +557,18 @@ __metadata:
     "@commitlint/rules": "npm:^19.0.3"
     "@commitlint/types": "npm:^19.0.3"
   checksum: 10/caeac7a989e186fb2e0fbd42ea6f32e3eff68525fbd8cd0a8c9bd242e038c3bfaac89c0da9c8f98dd07247b5656d6986163746eed225c3dd5374cd39cc7664a8
+  languageName: node
+  linkType: hard
+
+"@commitlint/lint@npm:^19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/lint@npm:19.2.2"
+  dependencies:
+    "@commitlint/is-ignored": "npm:^19.2.2"
+    "@commitlint/parse": "npm:^19.0.3"
+    "@commitlint/rules": "npm:^19.0.3"
+    "@commitlint/types": "npm:^19.0.3"
+  checksum: 10/9bf2ffa0f6cdde3d53d755b95ca717afd193f4560ae5bb0f5ffd7f1bbd571ddc99b27417733c70e1adbd74a5197e4525493b2dfc116680a939db7728fefa805c
   languageName: node
   linkType: hard
 
@@ -1510,7 +1549,7 @@ __metadata:
   dependencies:
     "@changesets/changelog-github": "npm:0.5.0"
     "@changesets/cli": "npm:2.27.1"
-    "@commitlint/cli": "npm:19.2.1"
+    "@commitlint/cli": "npm:19.2.2"
     "@commitlint/types": "npm:19.0.3"
     "@spear-ai/commitlint-config": "npm:3.1.1"
     "@spear-ai/eslint-config": "npm:18.0.0"
@@ -1536,7 +1575,7 @@ __metadata:
   dependencies:
     "@changesets/changelog-github": "npm:0.5.0"
     "@changesets/cli": "npm:2.27.1"
-    "@commitlint/cli": "npm:19.2.1"
+    "@commitlint/cli": "npm:19.2.2"
     "@commitlint/types": "npm:19.0.3"
     "@spear-ai/commitlint-config": "npm:3.1.1"
     "@spear-ai/eslint-config": "npm:18.0.0"
