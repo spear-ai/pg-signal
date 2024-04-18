@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - directory: /
+    labels:
+      - 🔧 maintenance
+    package-ecosystem: github-actions
+    schedule:
+      interval: monthly
+  - directory: /
+    labels:
+      - 🔧 maintenance
+    package-ecosystem: npm
+    schedule:
+      interval: monthly
+  - directory: /packages/pg_signal
+    labels:
+      - 🔧 maintenance
+    package-ecosystem: cargo
+    schedule:
+      interval: monthly
+  - directory: /packages/pg_signal
+    labels:
+      - 🔧 maintenance
+    package-ecosystem: npm
+    schedule:
+      interval: monthly

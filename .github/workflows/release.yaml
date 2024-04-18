@@ -1,0 +1,58 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+env:
+  POETRY_PYPI_TOKEN_PYPI: ${{ secrets.PYPI_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+jobs:
+  changesets:
+    name: Changesets
+    runs-on: ubuntu-latest
+    outputs:
+      should-deploy: ${{ steps.changesets.outputs.hasChangesets == 'false' }}
+    permissions: write-all
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.2
+        with:
+          fetch-depth: 0
+      - name: Install Poetry
+        run: pipx install poetry
+      - name: Setup Node.js
+        uses: actions/setup-node@v4.0.2
+        with:
+          cache: yarn
+          node-version-file: .node-version
+      - name: Setup Python
+        uses: actions/setup-python@v5.1.0
+        with:
+          cache: poetry
+          python-version-file: .python-version
+      - name: Install Node.js dependencies
+        run: yarn install
+      - name: Build packages
+        run: yarn turbo run build
+      - name: Authenticate with NPM
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+      - name: Authenticate with GitHub Packages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: npm config set //npm.pkg.github.com/:_authToken=$GITHUB_TOKEN
+      - id: changesets
+        name: Run Changesets — Create a Release Pull Request or merge a Release Pull Request
+        uses: changesets/action@v1.4.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          title: Release 🚀
+          version: yarn run version
+          commit: Release 🚀
+          publish: yarn run publish-packages

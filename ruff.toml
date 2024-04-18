@@ -1,0 +1,5 @@
+extend = ".venv/lib/python3.11/site-packages/spear_ai_ruff_config/config.toml"
+
+[lint.extend-per-file-ignores]
+"**/test_*.py" = ["D"]
+"**/tests/**/*.py" = ["D"]

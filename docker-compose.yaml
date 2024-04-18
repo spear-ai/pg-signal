@@ -1,0 +1,17 @@
+services:
+  hydra:
+    command: postgres -c "config_file=/etc/postgresql/postgresql.conf"
+    container_name: hydra
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    image: ghcr.io/hydradatabase/hydra:15-31944516837e5e80b67655839af59a679d4e7690
+    ports:
+      - 5432:5432
+    volumes:
+      # - ./sql/data:/var/lib/postgresql/data
+      - ./sql/files:/var/lib/postgresql/files
+      - ./sql/initialization/01-migrate.sql:/docker-entrypoint-initdb.d/zz-01-migrate.sql
+      - ./sql/initialization/02-seed.sql:/docker-entrypoint-initdb.d/zz-02-seed.sql
+      - ./sql/postgresql.conf:/etc/postgresql/postgresql.conf

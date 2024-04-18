@@ -1,0 +1,9 @@
+assume_in_transaction = true
+excluded_rules = [
+  "ban-drop-table",
+  "require-concurrent-index-creation",
+  "require-concurrent-index-deletion",
+  "prefer-big-int",
+  "prefer-bigint-over-int",
+]
+pg_version = "15.0"

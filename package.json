@@ -1,0 +1,64 @@
+{
+  "name": "@spear-ai/pg-signal-monorepo",
+  "version": "1.0.0",
+  "description": "PostgreSQL signal processing",
+  "author": {
+    "name": "Spear AI",
+    "email": "org@spear.ai",
+    "url": "https://spear.ai"
+  },
+  "type": "module",
+  "dependencies": {
+    "@changesets/changelog-github": "0.5.0",
+    "@changesets/cli": "2.27.1",
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/types": "19.0.3",
+    "@spear-ai/commitlint-config": "3.1.1",
+    "@spear-ai/eslint-config": "18.0.0",
+    "@spear-ai/npm-package-json-lint-config": "3.1.1",
+    "@spear-ai/prettier-config": "2.1.1",
+    "commitlint": "19.2.1",
+    "eslint": "8.57.0",
+    "graphql": "16.8.1",
+    "husky": "9.0.11",
+    "npm-package-json-lint": "7.1.0",
+    "prettier": "3.2.5",
+    "react": "18.2.0",
+    "squawk-cli": "0.28.0",
+    "tailwindcss": "3.4.3",
+    "turbo": "1.13.0",
+    "typescript": "5.4.3"
+  },
+  "license": "UNLICENSED",
+  "packageManager": "yarn@4.1.1",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spear-ai/pg_signal.git"
+  },
+  "scripts": {
+    "version": "changeset version && yarn workspaces foreach -A run sync-version",
+    "commitlint:check": "commitlint --from=HEAD^1",
+    "eslint:check": "eslint --max-warnings 0 .",
+    "eslint:fix": "yarn eslint:check --fix",
+    "generate": "poetry run python sql/generate.py",
+    "mypy:check": "poetry run mypy .",
+    "npmpkgjsonlint:check": "npmPkgJsonLint .",
+    "prettier:check": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "publish-packages": "yarn run publish-packages:npm && yarn run publish-packages:github && yarn run publish-packages:custom && yarn changeset tag",
+    "publish-packages:custom": "yarn workspaces foreach -A run publish-package",
+    "publish-packages:github": "npm_config_registry=https://npm.pkg.github.com changeset publish --no-git-tag",
+    "publish-packages:npm": "changeset publish --no-git-tag",
+    "ruff-format:check": "poetry run ruff format --check .",
+    "ruff-format:fix": "poetry run ruff format .",
+    "ruff-lint:check": "poetry run ruff check .",
+    "ruff-lint:fix": "poetry run ruff check --fix .",
+    "sqlfluff:check": "poetry run sqlfluff lint sql/**/*.sql",
+    "sqlfluff:fix": "poetry run sqlfluff fix sql/**/*.sql",
+    "squawk:check": "squawk --assume-in-transaction sql/**/*.sql"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}
