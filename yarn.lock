@@ -453,7 +453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:19.2.1, @commitlint/cli@npm:^19.2.1":
+"@commitlint/cli@npm:19.2.1":
   version: 19.2.1
   resolution: "@commitlint/cli@npm:19.2.1"
   dependencies:
@@ -467,6 +467,23 @@ __metadata:
   bin:
     commitlint: cli.js
   checksum: 10/6d3555039c96e21664d5159b06317558d31ca150f3326a2bd75aa82335032956c8f09481bf30b3aa3a2f8a2037b0a8e1947a787d57f4cb2007e3f69814e9c31f
+  languageName: node
+  linkType: hard
+
+"@commitlint/cli@npm:^19.3.0":
+  version: 19.3.0
+  resolution: "@commitlint/cli@npm:19.3.0"
+  dependencies:
+    "@commitlint/format": "npm:^19.3.0"
+    "@commitlint/lint": "npm:^19.2.2"
+    "@commitlint/load": "npm:^19.2.0"
+    "@commitlint/read": "npm:^19.2.1"
+    "@commitlint/types": "npm:^19.0.3"
+    execa: "npm:^8.0.1"
+    yargs: "npm:^17.0.0"
+  bin:
+    commitlint: cli.js
+  checksum: 10/b1565c0529b8a27ebb3313230f5ddf2f72c5dd819073b2ec141ea1547dfc4de3400a7208ae4f93b071cf8a6a2736aaeb1348c722f6e4627dc964dd0976a37810
   languageName: node
   linkType: hard
 
@@ -511,6 +528,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/format@npm:^19.3.0":
+  version: 19.3.0
+  resolution: "@commitlint/format@npm:19.3.0"
+  dependencies:
+    "@commitlint/types": "npm:^19.0.3"
+    chalk: "npm:^5.3.0"
+  checksum: 10/cc0e1e0e6d5eea76b856ad1be879de166c3d1385e1ae0e1bb78c575f9b78b53d92a56cd4719427cdba9cbb9a10235768da29144da9892596525c923d126951dd
+  languageName: node
+  linkType: hard
+
 "@commitlint/is-ignored@npm:^19.0.3":
   version: 19.0.3
   resolution: "@commitlint/is-ignored@npm:19.0.3"
@@ -518,6 +545,16 @@ __metadata:
     "@commitlint/types": "npm:^19.0.3"
     semver: "npm:^7.6.0"
   checksum: 10/1a2fcd1dadb37334ed025a0f2bf07493a69d6c8afa126119f2b13f57f7a406babc99b5e8dbf5a624e810f30e4f7c612b64281b139cf61e7923fb3123a107c1bd
+  languageName: node
+  linkType: hard
+
+"@commitlint/is-ignored@npm:^19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/is-ignored@npm:19.2.2"
+  dependencies:
+    "@commitlint/types": "npm:^19.0.3"
+    semver: "npm:^7.6.0"
+  checksum: 10/f412734496aba808c8bcbddd59c615600d62447ad2b62049805a044b1f299ff6628e2c9ce5022e55848099edc2591f62a7780842d9dffcd60ab3889bc93fea62
   languageName: node
   linkType: hard
 
@@ -530,6 +567,18 @@ __metadata:
     "@commitlint/rules": "npm:^19.0.3"
     "@commitlint/types": "npm:^19.0.3"
   checksum: 10/caeac7a989e186fb2e0fbd42ea6f32e3eff68525fbd8cd0a8c9bd242e038c3bfaac89c0da9c8f98dd07247b5656d6986163746eed225c3dd5374cd39cc7664a8
+  languageName: node
+  linkType: hard
+
+"@commitlint/lint@npm:^19.2.2":
+  version: 19.2.2
+  resolution: "@commitlint/lint@npm:19.2.2"
+  dependencies:
+    "@commitlint/is-ignored": "npm:^19.2.2"
+    "@commitlint/parse": "npm:^19.0.3"
+    "@commitlint/rules": "npm:^19.0.3"
+    "@commitlint/types": "npm:^19.0.3"
+  checksum: 10/9bf2ffa0f6cdde3d53d755b95ca717afd193f4560ae5bb0f5ffd7f1bbd571ddc99b27417733c70e1adbd74a5197e4525493b2dfc116680a939db7728fefa805c
   languageName: node
   linkType: hard
 
@@ -1516,7 +1565,7 @@ __metadata:
     "@spear-ai/eslint-config": "npm:18.0.0"
     "@spear-ai/npm-package-json-lint-config": "npm:3.1.1"
     "@spear-ai/prettier-config": "npm:2.1.1"
-    commitlint: "npm:19.2.1"
+    commitlint: "npm:19.3.0"
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     husky: "npm:9.0.11"
@@ -1542,7 +1591,7 @@ __metadata:
     "@spear-ai/eslint-config": "npm:18.0.0"
     "@spear-ai/npm-package-json-lint-config": "npm:3.1.1"
     "@spear-ai/prettier-config": "npm:2.1.1"
-    commitlint: "npm:19.2.1"
+    commitlint: "npm:19.3.0"
     eslint: "npm:8.57.0"
     graphql: "npm:16.8.1"
     husky: "npm:9.0.11"
@@ -2706,15 +2755,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commitlint@npm:19.2.1":
-  version: 19.2.1
-  resolution: "commitlint@npm:19.2.1"
+"commitlint@npm:19.3.0":
+  version: 19.3.0
+  resolution: "commitlint@npm:19.3.0"
   dependencies:
-    "@commitlint/cli": "npm:^19.2.1"
+    "@commitlint/cli": "npm:^19.3.0"
     "@commitlint/types": "npm:^19.0.3"
   bin:
     commitlint: cli.js
-  checksum: 10/920349607ba67b689adbe227098b4a857df7d498a7a3a586e45277d1a6d0bb3114e96e339ebeb64609417956497d65dba145993fdb762d91a75a26a5355ec09c
+  checksum: 10/a83dca51cc0b16686a56c7f38757412b9195ae2969560b4757310053820635462aeb9db390aadf3c97edf31eb722420d6a04664a09e0a1138b24f660ead1ae72
   languageName: node
   linkType: hard
 

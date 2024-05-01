@@ -17,7 +17,7 @@
     "@spear-ai/eslint-config": "18.0.0",
     "@spear-ai/npm-package-json-lint-config": "3.1.1",
     "@spear-ai/prettier-config": "2.1.1",
-    "commitlint": "19.2.1",
+    "commitlint": "19.3.0",
     "eslint": "8.57.0",
     "graphql": "16.8.1",
     "husky": "9.0.11",
